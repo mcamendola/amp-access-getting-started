@@ -1,0 +1,25 @@
+{
+  "name": "amp-access-getting-started",
+  "version": "1.0.0",
+  "description": "O propósito desse projeto é apresentar um exemplo básico de utilização do componente AMP Access (https://ampbyexample.com/components/amp-access/), que adiciona suport para paywall e assinaturas em templates AMP",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcamendola/amp-access-getting-started.git"
+  },
+  "keywords": [
+    "AMP",
+    "PAYWALL",
+    "SUBSCRIPTION",
+    "AMP ACCESS"
+  ],
+  "author": "Murilo Amêndola",
+  "license": "ISC",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "bugs": {
+    "url": "https://github.com/mcamendola/amp-access-getting-started/issues"
+  },
+  "homepage": "https://github.com/mcamendola/amp-access-getting-started#readme"
+}
