@@ -15,7 +15,7 @@ module.exports = function(req, res, next) {
     // Verify the origin (AMP and publisher domain)
     var requestingOrigin = getOrigin(req);
    if (!isValidOrigin(req, requestingOrigin)) {
-      console.log('invalid origin: ' + requestingOrigin);
+      //console.log('invalid origin: ' + requestingOrigin);
       // The request is not authorized
       res.sendStatus(401);
       return;
@@ -24,12 +24,12 @@ module.exports = function(req, res, next) {
     // Verify the source origin (publisher domain)
     var requestingSourceOrigin = req.query.__amp_source_origin || getOrigin(req);
     if (!isValidSourceOrigin(req, requestingSourceOrigin)) {
-      console.log('invalid source origin: ' + requestingSourceOrigin);
+      //console.log('invalid source origin: ' + requestingSourceOrigin);
       // The request is not authorized
       res.sendStatus(401);
       return;
     }
-    console.log('---- valid requesting origins');
+    //console.log('---- valid requesting origins');
     // Return the allowed requesting origin 
     res.header('Access-Control-Allow-Origin', requestingOrigin);
     // Allow CORS credentials
@@ -48,15 +48,15 @@ function isValidOrigin(req, origin) {
     // if origin not set verify the request host
     origin = req.protocol + '://' + req.hostname;
   }
-  console.log('---- verifying origin: ', origin);
+  //console.log('---- verifying origin: ', origin);
 
   return matchesAnyOrigin(VALID_AMP_ORIGINS, origin) || isValidSourceOrigin(req, origin);
 }
 
 function isValidSourceOrigin(req, sourceOrigin) {
-  console.log('---- verifying source origin: ', sourceOrigin);
+  //console.log('---- verifying source origin: ', sourceOrigin);
   if (req.hostname == 'localhost') {
-    console.log('no origin check in dev mode');
+    //console.log('no origin check in dev mode');
     return true;
   }
 

@@ -1,0 +1,171 @@
+<!doctype html>
+<html ⚡>
+
+<head>
+    <meta charset="utf-8">
+    <title>Matéria 1</title>
+    <link rel="canonical" href="materia1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+    <style amp-boilerplate>
+        body {
+            -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            animation: -amp-start 8s steps(1, end) 0s 1 normal both
+        }
+
+        @-webkit-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+
+        @-moz-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+
+        @-ms-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+
+        @-o-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+
+        @keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+    </style>
+    <noscript>
+        <style amp-boilerplate>
+            body {
+                -webkit-animation: none;
+                -moz-animation: none;
+                -ms-animation: none;
+                animation: none
+            }
+        </style>
+    </noscript>
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "NewsArticle",
+            "mainEntityofPage": "https://meu_dominio/path_da_materia",
+            "headline": "Matéria 1",
+            "datePublished": "2017-05-30T11:00:25",
+            "dateModified": "",
+            "description": "Matéria 1 descrição",
+
+            "author": {
+                "@type": "Person",
+                "name": "Tribo Performance"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "InfoGlobo/Editora Globo",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "http://www.infoglobo.com.br/Anuncie/comum/img/topo/logo_infoglobo_new.gif",
+                    "width": 120,
+                    "height": 50
+                }
+            }
+        }
+    </script>
+    <script id="amp-access" type="application/json">
+        {
+      "authorization": "<% host %>/api/amp-access/authorization.json?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
+      "pingback": "<% host %>/api/amp-access/pingback?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER",
+      "login": "<% host %>/login?rid=READER_ID&url=CANONICAL_URL",
+      "authorizationFallbackResponse": {
+        "error": true,
+        "access": false
+      }     
+    }
+    </script>
+    <script async custom-element="amp-access" src="https://cdn.ampproject.org/v0/amp-access-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+    <script custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js" async></script>
+    <script src="https://cdn.ampproject.org/v0.js" async></script>
+</head>
+<body>
+
+    <header id="header">
+        <a href="<%= host %>">
+            <amp-img src="<%= host %>/static/logo.png" width="301" height="168" />
+        </a>
+
+        <div class="navigation">
+            <div class="next">
+                <a href="/materias/2">Próxima</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- Esta area somente será vista por usuários que não possuam acesso liberado e tenham atingido o número máximo de visualizações -->
+        <section amp-access="NOT autorizado AND maxViews" amp-access-hide>
+            <template amp-access-template type="amp-mustache">
+                Você atingiu o limite de {{maxViews}} matérias gratuitas esse mês.
+            </template>
+            
+            <div on="tap:amp-access.login" role="button" tabindex="0">
+                <a>Já sou assinante? <span>Clique aqui para se autenticar</span></a>
+            </div>
+        </section>
+
+        <section id="content">
+            <h2>Título da matéria</h2>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sapien dolor, varius ac tempor eget, laoreet in erat. Pellentesque tristique lacus non efficitur iaculis. Ut ac elementum augue. Nullam eget tempor tellus. Nam eros quam, malesuada sed eleifend non, congue at leo. Mauris faucibus lacinia nisl ac pretium. Fusce molestie eu magna sed vehicula. Aliquam quis vulputate mi. Aliquam non neque sed lectus lobortis maximus et sed dolor. Proin in mollis nisl. Suspendisse lectus nisl, porttitor id eleifend id, lobortis sed quam. Curabitur fringilla, lorem sit amet laoreet suscipit, eros est placerat nunc, in efficitur nisl sem non dui.</p>
+        
+            <!-- Não tenho acesso e atingi o número máximo de degustação -->
+            <section amp-access="NOT autorizado AND maxViews" amp-access-hide>
+                <div on="tap:amp-access.login" role="button" tabindex="0">
+                    <a><span>Log in</span> para continuar lendo.</a>
+                </div>
+            </section>
+
+            <!-- Todos os usuários autorizados verão esse conteúdo -->
+            <section amp-access="autorizado">
+                <p>Morbi ut vulputate nisi. Duis quis metus lacus. Ut gravida luctus orci id dignissim. Fusce non est rutrum, lacinia massa ut, sollicitudin leo. Praesent lobortis semper egestas. Nulla aliquet tellus vel odio euismod, et vestibulum arcu porta. Quisque tempus sem quis lorem fringilla eleifend. Praesent hendrerit neque non dui congue commodo. Praesent et posuere orci, sit amet rhoncus purus. Nunc ut diam quis lectus elementum eleifend. Duis fermentum velit eu volutpat bibendum. Phasellus porta ante dolor, ut condimentum nisi venenatis nec. Nullam et tellus condimentum, molestie sem in, tempus mi. Duis ultricies mi ac fringilla laoreet. Quisque semper ex ultricies urna sollicitudin rhoncus.</p>
+                
+                <p>Duis aliquam auctor felis, nec bibendum ante venenatis vel. Ut luctus libero ex. Ut commodo eleifend scelerisque. Aenean fermentum placerat ex, sit amet luctus nulla vulputate eget. Cras aliquam odio libero, ac posuere eros fermentum nec. Quisque condimentum leo at elit posuere hendrerit. Curabitur eu lorem at libero interdum ultrices. Quisque consectetur leo sed ex dapibus commodo. Vivamus ultrices, tortor sed mollis pellentesque, ligula mauris ullamcorper ex, et pellentesque diam ipsum sit amet urna. Mauris porta ligula sit amet urna ullamcorper, lacinia molestie metus congue. Phasellus at nibh nisi.</p>
+            </section>
+
+        </section>
+
+    </main>
+
+    <footer id="footer">
+        <div>
+            <address>Copyright &copy; 2017 Revista Época. Todos os direitos reservados.</address>
+        </div>
+    </footer>
+
+</body>
+</html>
