@@ -11,18 +11,31 @@ Para um melhor entendimento sobre o uso do amp-access, aplicado nesse projeto, �
 
 ## Instalando
 
-Clone do repositório através do comando:
+Abra o terminal do Linux ou o GitBash no Windows e certifique-se que o `nodejs` está instalando corretamente:
+```
+$ npm -v
+$ node -v
+```
 
-```none
+Faça clone do repositório através do comando:
+```
 $ git clone git@github.com:mcamendola/amp-access-getting-started.git
 ```
 
 Instale [node.js](https://nodejs.org/) e execute os seguintes comandos no diretório do projeto:
-
-```none
-$ npm i
+```
+$ npm install
 $ npm start
 ```
 
-Teste através do link [http://localhost:3000/](http://localhost:3000/). 
+Caso o comando `npm start` falhe, execute os comandos abaixo pois a conexão pode ter falhado devido ao proxy:
+```
+$ npm config set proxy "http://[USUARIO]:[SENHA]@[URL DO PROXY]:[PORTA DO PROXY]"
+$ npm set strict-ssl=false
+$ npm start
+```
 
+Teste através do link:
+```
+http://localhost:3000/
+```

@@ -1,0 +1,11 @@
+<script>
+//TODO: ler json com as ultimas materias de: https://oglobo.globo.com/api/v1/ultimas-noticias/ece_frontpage/conteudo.json
+</script>
+
+<ul>
+    <% for(var i = 1; i <= 5; i++) { %>
+        <li>
+            <a href="/materias/<%=i%>">Matéria <%= i %></a>
+        </li>
+    <% } %>
+</ul>
