@@ -96,13 +96,16 @@
         }
     </script>
     <script id="amp-access" type="application/json">
-        {
+    {
       "authorization": "<% host %>/api/amp-access/authorization.json?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
       "pingback": "<% host %>/api/amp-access/pingback?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER",
-      "login": "<% host %>/login?rid=READER_ID&url=CANONICAL_URL",
+      "login": {
+        "sign-in": "<% host %>/login?rid=READER_ID&url=CANONICAL_URL",
+        "sign-out": "<% host %>/logout?rid=READER_ID&url=CANONICAL_URL"
+      },
       "authorizationFallbackResponse": {
         "error": true,
-        "access": false
+        "autorizado": true
       }     
     }
     </script>
@@ -115,7 +118,7 @@
 
     <header id="header">
         <a href="<%= host %>">
-            <amp-img src="<%= host %>/static/logo.png" width="301" height="168" />
+            <amp-img src="<%= host %>/static/img/logo.png" width="301" height="168" />
         </a>
 
         <div class="navigation">
@@ -136,7 +139,7 @@
                 Você atingiu o limite de {{maxViews}} matérias gratuitas esse mês.
             </template>
             
-            <div on="tap:amp-access.login" role="button" tabindex="0">
+            <div on="tap:amp-access.login-sign-in" role="button" tabindex="0">
                 <a>Já sou assinante? <span>Clique aqui para se autenticar</span></a>
             </div>
         </section>
@@ -148,7 +151,7 @@
         
             <!-- Não tenho acesso e atingi o número máximo de degustação -->
             <section amp-access="NOT autorizado AND maxViews" amp-access-hide>
-                <div on="tap:amp-access.login" role="button" tabindex="0">
+                <div on="tap:amp-access.login-sign-in" role="button" tabindex="0">
                     <a><span>Log in</span> para continuar lendo.</a>
                 </div>
             </section>
@@ -165,9 +168,7 @@
     </main>
 
     <footer id="footer">
-        <div>
-            <address>Copyright &copy; 2017 Revista Época. Todos os direitos reservados.</address>
-        </div>
+        <address>&copy; Squad Performance <%= new Date().getFullYear(); %></address>
     </footer>
 
 </body>

@@ -3,10 +3,15 @@
 module.exports = function(app) {
 
     app.get('/login', function(req, res, next) {
-        res.render('login/index', {
-            rid: req.params.rid,
-            canonicalUrl: req.params.url
-        })
+        var params = {
+            rid: req.query.rid, 
+            url: req.query.url, 
+            ref: req.query.ref
+        };
+
+        console.log('pingback: ', params);
+
+        res.render('login/index', params)
     });
 
 }
