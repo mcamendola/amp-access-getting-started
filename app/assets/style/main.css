@@ -5,7 +5,7 @@
 	outline: none;
 }
 
-body {
+body, table {
 	font-size: 10px;
 }
 
@@ -87,4 +87,17 @@ body > footer address {
 	color: #333;
 	font-family: "Oswald", serif;
 	font-size: 1.8em;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
 }

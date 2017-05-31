@@ -1,18 +1,44 @@
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+    
     <title>Poc amp-access - Login</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/style/main.css">
 </head>
 <body>
-    <h1>Login</h1>
+    <%- include('../partials/header'); %>
 
-    <p>
-        <strong>Parâmetros recebidos na requisição</strong><br/>
-        rid: <%= rid %><br/>
-        url: <%= url %><br/>
-        ref: <%= ref %>        
-    </p>
+    <main id="main">
+        <section id="content">
+            <p>Aqui faremos a integração com o GloboId, ou provavelmente nesse passo já teríamos redirecionado o usuário para o GloboId e recebido o callback com o GLBID</p>
+            <br/><br/>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Parâmetros</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>rid</td>
+                        <td><%= rid %></td>
+                    </tr>
+                    <tr>
+                        <td>url</td>
+                        <td><%= url %></td>
+                    </tr>
+                    <tr>
+                        <td>ref</td>
+                        <td><%= ref %></td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <p>Aqui faremos a integração com o GloboId, ou provavelmente nesse passo já teríamos redirecionado o usuário para o GloboId e recebido o callback com o GLBID</p>
+        </section>
+    </main>
 
+    <%- include('../partials/footer'); %>
 </body>
 </html>
