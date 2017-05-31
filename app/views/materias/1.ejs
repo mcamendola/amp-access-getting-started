@@ -6,6 +6,132 @@
     <title>Matéria 1</title>
     <link rel="canonical" href="materia1">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+    
+    <style amp-custom>
+        body {
+	        font-size: 10px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body > header {
+            text-indent: -9999em;
+            overflow: hidden;
+            color: transparent;
+            font-size: 0;
+        }
+
+        body > header {
+            height: 50px;
+            background: #eee;
+            border-bottom: solid 1px #ccc;
+            position: relative;
+        }
+
+        body > header h1 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        body > header a {
+            display: block;
+            width: 120px;
+            height: 30px;
+            background-size: contain;
+            margin: auto;
+        }
+
+        body > footer {
+            position: relative;
+            background: #ddd;
+            padding-top: 30px;
+            padding-bottom: 16px;
+            border-top: solid 1px #999;
+        }
+
+        body > footer address {
+            max-width: 280px;
+            margin: auto;
+            text-align: center;
+            font-style: normal;
+        }
+
+        .navigation {
+            overflow: hidden;
+            margin: 0;
+            width: auto;
+            padding-bottom: 8px;
+        }
+        
+        .navigation .prev {
+            float: left;
+            background-image: url('/static/img/prev.png');
+            background-position: left center;
+            background-repeat: no-repeat;
+            padding-left: 24px;
+        }
+        
+        .navigation .next {
+            float: right;
+            background-image: url('/static/img/next.png');
+            background-position: right center;
+            background-repeat: no-repeat;
+            padding-right: 24px;
+        }
+        
+        .navigation a {
+            display: inline-block;
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 32px;
+            margin: 0;
+            padding-bottom: 12px;
+            line-height: 0;
+        }
+
+        #content {
+            padding: 10px;
+            background: #fff;
+            overflow: auto;
+        }
+
+        .paywall-message {
+            font-size: 1.3em;
+            background-color: #fbb35a;
+            color: #333;
+            padding: 7px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .button {
+            line-height: 1.428571429;
+            border: 1px solid #d2d2d2;
+            border-radius: 4px;
+            margin: 10px;
+            padding: 6px;
+        }
+        
+        .button a {
+            width: 100%;
+            display: block;
+            color: #333;
+            font-size: 1.3em;
+            text-align: center;
+        }
+        
+        .button a span {
+            font-weight: bold;
+        }
+    </style>
+    
     <style amp-boilerplate>
         body {
             -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -117,10 +243,8 @@
 <body>
 
     <header id="header">
-        <a href="<%= host %>">
-            <amp-img src="<%= host %>/static/img/logo.png" width="301" height="168" />
-        </a>
-
+        <h1><a href="/"><amp-img src="<%= host %>/static/img/logo.png" width="120" height="30" /></a></h1>
+        
         <div class="navigation">
             <div class="next">
                 <a href="/materias/2">Próxima</a>
@@ -132,11 +256,13 @@
 
         <!-- Esta area somente será vista por usuários que não possuam acesso liberado e tenham atingido o número máximo de visualizações -->
         <section amp-access="NOT autorizado AND maxViews" amp-access-hide>
-            <template amp-access-template type="amp-mustache">
-                Você atingiu o limite de {{maxViews}} matérias gratuitas esse mês.
-            </template>
+            <div class="paywall-message">
+                <template amp-access-template type="amp-mustache">
+                    Você atingiu o limite de {{maxViews}} matérias gratuitas esse mês.
+                </template>
+            </div>
             
-            <div on="tap:amp-access.login-sign-in" role="button" tabindex="0">
+            <div on="tap:amp-access.login-sign-in" class="button" role="button" tabindex="0">
                 <a>Já sou assinante? <span>Clique aqui para se autenticar</span></a>
             </div>
         </section>
@@ -148,7 +274,7 @@
         
             <!-- Não tenho acesso e atingi o número máximo de degustação -->
             <section amp-access="NOT autorizado AND maxViews" amp-access-hide>
-                <div on="tap:amp-access.login-sign-in" role="button" tabindex="0">
+                <div on="tap:amp-access.login-sign-in" class="button" role="button" tabindex="0">
                     <a><span>Log in</span> para continuar lendo.</a>
                 </div>
             </section>
