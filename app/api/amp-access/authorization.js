@@ -19,7 +19,7 @@ module.exports = function(app) {
         var response = {
             'autorizado': false,
             'views': 1,
-            'maxViews': 3
+            'maxViews': 2
         };
 
         res.json(response);
