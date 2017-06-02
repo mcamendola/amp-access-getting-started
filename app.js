@@ -1,6 +1,7 @@
 "use strict";
 
 var app = require('./app/config/server');
+var consign = require('consign')();
 
 // EJS
 app.set('view engine', 'ejs');
@@ -9,11 +10,5 @@ app.set('views', './app/views')
 // Middlewares
 app.use(require('./app/middlewares/amp-access-cors'));
 
-// API
-var apiAuthorization = require('./app/api/amp-access/authorization')(app);
-var apiPingback = require('./app/api/amp-access/pingback')(app);
-
-// Controllers
-var homeController = require('./app/controllers/home-controller')(app);
-var materiasController = require('./app/controllers/materias-controller')(app);
-var loginController = require('./app/controllers/login-controller')(app);
+consign.include('./app/api/amp-access').into(app);
+consign.include('./app/controllers').into(app);
