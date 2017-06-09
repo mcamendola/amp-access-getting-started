@@ -10,5 +10,6 @@ app.set('views', './app/views')
 // Middlewares
 app.use(require('./app/middlewares/amp-access-cors'));
 
-consign.include('./app/api/amp-access').into(app);
-consign.include('./app/controllers').into(app);
+consign.include('./app/api/amp-access')
+       .then('./app/controllers')
+       .into(app);
