@@ -7,6 +7,8 @@ var consign = require('consign')();
 app.set('view engine', 'ejs');
 app.set('views', './app/views')
 
+
+
 // Middlewares
 app.use(require('./app/middlewares/amp-access-cors'));
 
